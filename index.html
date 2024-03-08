@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <title>Document</title>
+
+        <link
+            rel="preload"
+            href="./fonts/Montserrat_Alternates/montserrat-alternates-v17-latin-regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="preload"
+            href="./fonts/Montserrat/montserrat-v26-latin-regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="preload"
+            href="./fonts/Montserrat/montserrat-v26-latin-600.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="preload"
+            href="./fonts/Montserrat/montserrat-v26-latin-600italic.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="preload"
+            href="./fonts/Montserrat/montserrat-v26-latin-800.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="preload"
+            href="./fonts/Montserrat/montserrat-v26-latin-800italic.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="preload"
+            href="./fonts/KhakiTwo/KhakiTwo.ttf"
+            as="font"
+            type="font/ttf"
+            crossorigin
+        />
+
+        <link
+            rel="stylesheet"
+            href="./css/fonts.css"
+        />
+        <link
+            rel="stylesheet"
+            href="./css/normalize.css"
+        />
+        <link
+            rel="stylesheet"
+            href="./css/bootstrap-grid.min.css"
+        />
+
+        <link rel="stylesheet" href="./css/font-awesome/5.13.1/css/all.min.css" />
+
+        <style>
+            * {
+                font-family: 'Khaki Two';
+            }
+
+            :root {
+                --primary-color: #15291c;
+                --secondary-color: #ec6300;
+                --tertiary-color: #fbca6d;
+                --light-color: #f4f4f4;
+            }
+
+            body {
+                background-color: var(--primary-color);
+            }
+
+            .showcase {
+                width: 100svw;
+                height: 100svh;
+
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+            }
+
+            .showcase .showcase-text {
+                height: 100%;
+
+                display: flex;
+                align-items: center;
+
+                z-index: 2;
+                font-family: Montserrat;
+                text-transform: capitalize;
+                color: rgb(255, 255, 255);
+                text-decoration: none;
+                white-space: nowrap;
+                min-height: 0px;
+                min-width: 0px;
+                max-height: none;
+                max-width: none;
+                text-align: inherit;
+                line-height: 120px;
+                letter-spacing: -2px;
+                font-weight: 600;
+                font-size: 200px;
+                backdrop-filter: none;
+                filter: none;
+                transform-origin: 50% 50%;
+                opacity: 1;
+                transform: translate(0px, 0px);
+                visibility: visible;
+            }
+
+            .showcase .showcase-text .showcase-text-inner {
+                color: #fff;
+            }
+
+            .showcase
+                .showcase-text
+                .showcase-text-inner
+                .showcase-text-inner-description {
+                font-family: 'Montserrat';
+                font-size: 32px;
+                transform: translateY(100px);
+                padding-left: 74px;
+                opacity: 0;
+                transition: all 1.5s ease-out 2.5s;
+            }
+
+            .showcase .showcase-text p {
+                padding: 0;
+                margin: 80px;
+                margin-bottom: 0;
+                margin-top: 0;
+            }
+
+            .showcase-images {
+                display: flex;
+                position: relative;
+                object-fit: contain;
+            }
+
+            .showcase-images::after {
+                content: '';
+            }
+
+            .showcase-images div {
+                position: relative;
+                height: 700px;
+
+                /* Animation */
+                overflow: hidden;
+            }
+
+            .showcase-images div img {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            .showcase-images div::after {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.3);
+            }
+
+            .showcase-images .showcase-image {
+                /* transition: all 2s ease-out 0.1s; */
+                transition: all 1.3s ease-out 0.2s;
+            }
+
+            nav {
+                position: fixed;
+                width: 100dvw;
+                background-color: #fff;
+                height: 60px;
+                z-index: 5;
+                display: flex;
+                align-items: center;
+                box-shadow: 0px 1px 10px #999;
+            }
+
+            nav .logo {
+                margin-left: 20px;
+            }
+
+            nav .nav-wrapper {
+                display: flex;
+                justify-content: flex-end;
+                width: 100%;
+                margin-right: 20px;
+            }
+
+            nav .nav-wrapper ul {
+                list-style-type: none;
+                display: flex;
+                justify-content: space-between;
+                width: 800px;
+                height: 100%;
+                margin-top: 0;
+                margin-bottom: 0;
+                font-size: 18px;
+            }
+
+            nav .nav-wrapper ul li a {
+                text-decoration: none;
+                color: black;
+                font-family: 'Montserrat Alternates';
+            }
+
+            .underline {
+                position: relative;
+            }
+
+            .underline::before {
+                content: '';
+                width: 100%;
+                height: 10px;
+                background-image: url('./img/underline.svg');
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                position: absolute;
+                left: 0;
+                bottom: 16px;
+
+                /* animation: fadeIn 3s alternate 2s forwards; */
+            }
+
+            .content {
+                background-color: #fff;
+                color: #000;
+            }
+
+            /* Text Image Component */
+            .text-image--text-heading {
+                font-family: 'Montserrat';
+                font-size: 32px;
+                color: #000;
+            }
+
+            .text-image--text-paragraph {
+                font-family: 'Montserrat';
+                font-size: 18px;
+                text-align: justify;
+                line-height: 1.5;
+            }
+
+            .text-image--image-wrapper--image {
+                object-fit: contain;
+            }
+
+            /* Text Component */
+            .text--heading {
+                font-size: 32px;
+                font-family: 'Montserrat';
+            }
+
+            .text--paragraph {
+                font-family: 'Montserrat';
+                font-size: 18px;
+                text-align: justify;
+                line-height: 1.5;
+            }
+
+            .wrapper-gallery {
+                display: flex;
+                height: 600px;
+                background-color: white;
+            }
+
+            .separator {
+                background-color: var(--tertiary-color);
+                padding: 1rem 0;
+            }
+
+            .btn {
+                display: inline-block;
+                height: 50px;
+                padding: 4px 40px;
+                color: #333;
+                text-align: center;
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 38px;
+                letter-spacing: 0.1rem;
+                text-transform: uppercase;
+                text-decoration: none;
+                white-space: nowrap;
+                background-color: transparent;
+                border-radius: 4px;
+                border: 2px solid #333;
+                cursor: pointer;
+                box-sizing: border-box;
+
+                font-family: Montserrat;
+
+                position: relative;
+
+                transition: all 0.3s ease-in;
+            }
+
+            .btn span {
+                font-family: Montserrat;
+                position: relative;
+                transition: all 0.3s ease-in;
+            }
+
+            .animation-underline {
+                width: 0px;
+                background-color: transparent; 
+                border: 2px solid transparent;
+                height: 1px; 
+                transform: translateY(-6px);
+            }
+
+            .btn:hover .animation-underline {
+                background-color: rgb(246, 112, 53);
+                border: 2px solid rgb(246, 112, 53);
+                transition: all 0.3s ease-out;
+                width: 100%;
+            }
+
+            .footer {
+                background-color: var(--light-color);
+                color: #000;
+                font-family: Montserrat;
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+            }
+
+            .link {
+                font-family: Montserrat;
+                color: var(--secondary-color);
+                transition: all 0.3s ease-in;
+
+            }
+
+            .link:hover {
+                color: #f7a46a
+            }
+
+
+            /* just copied, menu hamburger overlay */
+            /* surrounds overlay */
+
+
+/* the checkbox we use for hamburger state */
+input[id='toggler'][type='checkbox'] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+}
+
+/* the hamburger parent for creating hamburger background */
+.menu-wrap .hamburger {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    width: 30px;
+    height: 28px;
+    background-color: white;
+    padding: 1rem;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+/* center hamburger line */
+.menu-wrap .hamburger > div {
+    position: relative;
+    flex: none;
+    height: 2px;
+    width: 100%;
+    background-color: black;
+    transition: all 0.35s ease-out;
+}
+
+/* up hamburger line */
+.menu-wrap .hamburger > div::before {
+    content: '';
+    flex: none;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    top: -10px;
+    left: 0;
+    background-color: black;
+}
+
+/* down hamburger line */
+.menu-wrap .hamburger > div::after {
+    content: '';
+    flex: none;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    background-color: black;
+}
+
+/* clicked means checked - make a small background -> + means the hamburger class under the checkbox */
+/*
+input[id='toggler'][type='checkbox']:checked + .hamburger {
+    background-color: rgba(31, 170, 212, 1.0);
+} 
+*/
+
+/* the actual checkbox - transform it to an X */
+input[id='toggler'][type='checkbox']:checked + .hamburger > div {
+    transform: rotate(135deg);
+}
+
+input[id='toggler'][type='checkbox']:checked + .hamburger > div::after,
+input[id='toggler'][type='checkbox']:checked + .hamburger > div::before {
+    content: '';
+    top: 0;
+    transform: rotate(90deg);
+}
+
+/* Possible Hover Effect for the X */
+/* 
+input[id='toggler'][type='checkbox']:checked:hover + .hamburger > div { 
+    transform: rotate(225deg);
+}
+*/
+
+.menu-wrap .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
+
+.menu-wrap .menu > div {
+    background: rgba(0, 0, 0, 1);
+    width: 500vh;
+    height: 200vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+/* transform: scale(0); */
+
+    opacity: 0;
+
+    transition: all 0.5s ease-out 0s;
+    visibility: hidden;
+}
+
+input[id='toggler'][type='checkbox']:checked ~ .menu > div {
+    visibility: visible;
+    /* transform: scale(1); */
+}
+
+.menu-wrap .menu > div > ul {
+    list-style-type: none;
+}
+
+.menu-wrap .menu > div > ul li {
+    margin: 1.5rem;
+}
+
+.menu-wrap .menu > div > ul li a {
+    font-size: 2.5rem;
+    text-decoration: none;
+    color: #fff;
+}
+
+input[id='toggler'][type='checkbox']:checked ~ .menu > div {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.link-nav span {
+                font-family: Montserrat;
+                position: relative;
+                transition: all 0.3s ease-in;
+            }
+
+            .animation-underline {
+                width: 0px;
+                background-color: transparent; 
+                border: 2px solid transparent;
+                height: 1px; 
+                transform: translateY(-6px);
+            }
+
+            .link-nav:hover .animation-underline {
+                background-color: rgb(246, 112, 53);
+                border: 2px solid rgb(246, 112, 53);
+                transition: all 0.3s ease-out;
+                width: 100%;
+            }
+
+            .link-nav:hover .animation-underline-nav {
+                background-color: rgb(246, 112, 53);
+                border: 2px solid rgb(246, 112, 53);
+                transition: all 0.3s ease-out;
+                width: 100%;
+            }
+
+            .animation-underline-nav {
+                width: 0px;
+                background-color: transparent; 
+                border: 2px solid transparent;
+                height: 1px; 
+                transform: translateY(0px);
+            }
+
+            @media only screen and (max-width: 500px) {
+                .showcase {
+                    flex-flow: column nowrap;
+                }
+
+                .showcase .showcase-text {
+                    font-size: 100px;
+
+                    height: 100%;
+
+                    display: flex;
+                    align-items: center;
+
+                    z-index: 2;
+                    font-family: Montserrat;
+                    text-transform: capitalize;
+                    color: rgb(255, 255, 255);
+                    text-decoration: none;
+                    white-space: nowrap;
+                    min-height: auto;
+                    min-width:auto;
+                    max-height: auto;
+                    max-width: auto;
+                    text-align: inherit;
+                    line-height: 120px;
+                    letter-spacing: -2px;
+                    backdrop-filter: none;
+                    filter: none;
+                    transform-origin: none;
+                    opacity: 1;
+                    transform: none;
+                    visibility: visible; 
+
+                    margin-top: 8rem;
+                    padding-left: 0;
+                }
+
+                .showcase .showcase-text p {
+                    margin: 0;
+                    padding: 0;
+                    
+                }
+
+                .showcase-text-inner-actual-text {
+                    margin-left: 0 !important;
+                    justify-content: flex-start !important;
+                    padding: 0 !important;
+                    height: auto !important;
+                }
+
+                .showcase-text-inner-description {
+                    
+                    font-size: 24px !important;
+                    word-break: break-all !important;
+                    line-height: 0 !important;
+                    transform: translateY(0) !important;
+                    margin-top: 2rem !important;
+                    padding-left: 0.5rem !important;
+                }
+
+                .text-image--text-paragraph {
+                font-family: 'Montserrat';
+                font-size: 16px;
+                text-align: justify;
+                line-height: 1.5;
+            }
+
+            .text-wrapper p {
+                font-size: 14px !important;
+            }
+
+            .container-mobile  {
+                width: auto !important;
+            }
+
+            .showcase-image-1 {
+                margin-left: 8px !important;
+                margin-right: 8px !important;
+            }
+
+            .showcase-image-2 {
+                margin-right: 8px !important;
+            }
+
+            .showcase-images {
+                margin-top: -8rem
+            }
+
+            .wrapper-content-reverse {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+
+            .content-2 {
+                padding-top: 0 !important;
+            }
+
+            .images {
+                padding-bottom: 10rem;
+                background-color: #fff;
+            }
+
+            /* TODO: Instead if hiding those, implement a fading library that fades around these images */
+            .gallery-image-1 {
+                display: none
+            }
+
+            .gallery-image-2 {
+                margin-left: 1rem
+            }
+
+            .gallery-image-3 {
+                display: none
+            }
+
+
+
+            }
+
+        </style>
+    </head>
+    <body>
+        <nav>
+            <div class="logo">
+                <img
+                    width="80"
+                    src="./img/logo.png"
+                />
+            </div>
+            <div class="nav-wrapper">
+                <ul style="visibility: hidden">
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li><a href="#">Produkte</a></li>
+                    <li><a href="#">Atelier</a></li>
+                    <li><a href="#">Aktuelles</a></li>
+                    <li><a href="#">Galerie</a></li>
+                    <li><a href="#">Onlineshop</a></li>
+                    <li><a href="#">Kontakt</a></li>
+                </ul>
+                <div class="menu-wrap"> <!-- Wrapper that is then set to fixed to show the content -->
+        
+                    <!-- Hamburger Styling -->
+                    <input type="checkbox" id="toggler">
+                    <div class="hamburger">
+                        <div></div>
+                    </div>
+            
+
+                    <!-- 
+<div style="display: flex;">
+                            <a
+                            class="btn mt-5"
+                            style="display: flex; flex-flow: column;"
+
+                            href="#"
+                            >
+                            <span>Zu unseren Produkten</span><span
+                                style=""
+                                class="animation-underline"
+                            ></span
+                        ></a>
+                        </div>
+
+                     -->
+
+
+
+                    <!-- Overlay Menu itself -->
+                    <div id="menuID" class="menu">
+                        <div style="height: 100%; width: 100%;">
+                            <ul style="display: flex; flex-flow: column; max-height: 500px; width: 250px; padding-left: 0;">
+                                <li><a style="text-align: center; display: flex; flex-flow: column" class="link-nav" href="#"><span>Home</span><span class="animation-underline-nav"></span></a></li>
+                                <li><a style="text-align: center; display: flex; flex-flow: column" class="link-nav" href="#"><span>Produkte</span><span class="animation-underline-nav"></span></a></li>
+                                <li><a style="text-align: center; display: flex; flex-flow: column" class="link-nav" href="#"><span>Atelier</span><span class="animation-underline-nav"></span></a></li>
+                                <li><a style="text-align: center; display: flex; flex-flow: column" class="link-nav" href="#"><span>Galerie</span><span class="animation-underline-nav"></span></a></li>
+                                <li><a style="text-align: center; display: flex; flex-flow: column" class="link-nav" href="#"><span>Kontakt</span><span class="animation-underline-nav"></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+            
+                </div>
+            </div>
+        </nav>
+        <section class="showcase">
+            <div class="showcase-text">
+                <div class="showcase-text-inner">
+                    <div
+                        style="
+                            height: 400px;
+                            display: flex;
+                            flex-flow: column wrap;
+                            justify-content: space-around;
+                            overflow: hidden;
+                            margin-left: 64px;
+                        "
+                        class="showcase-text-inner-actual-text"
+                    >
+                        <p
+                            class="showcase-text-inner-headline"
+                            style="
+                                /*! margin-bottom: 64px */
+                                opacity: 0;
+                                /* transform: translateX(-120%); */
+                                transition: all 0.3s ease-out 1.5s;
+                            "
+                        >
+                            Kürbishof
+                        </p>
+                        <p
+                            style="
+                                /*! margin-bottom: 64px */
+                                opacity: 0;
+                                /* transform: translateX(-120%); */
+                                transition: all 0.3s ease-out 2s;
+                            "
+                            class="showcase-text-inner-headline"
+                        >
+                            <span class="underline">Koller</span>
+                        </p>
+                    </div>
+                    <p class="showcase-text-inner-description">
+                        Lorem ipsum dolor sit amet.
+                    </p>
+                </div>
+            </div>
+            <div class="showcase-images">
+                <div class="showcase-image-1" style="margin-right: 64px">
+                    <img
+                        src="./img/kuerbis-2.jpeg"
+                        width="1080"
+                        height="810"
+                        class="showcase-image"
+                        alt="image.alt"
+                        style="
+                            max-width: 100%;
+                            height: 100%;
+                            width: 100%;
+                            object-fit: contain;
+                        "
+                    />
+                </div>
+                <div class="showcase-image-2"  style="margin-right: 64px">
+                    <img
+                        src="./img/kierbis-11.jpeg"
+                        width="1080"
+                        height="1350"
+                        class="showcase-image"
+                        alt="image.alt"
+                        style="
+                            max-width: 100%;
+                            height: 100%;
+                            width: 100%;
+                            object-fit: contain;
+                        "
+                    />
+                </div>
+            </div>
+        </section>
+
+        <script>
+            const images = document.getElementsByClassName('showcase-image');
+
+            for (let i = 0; i < images.length; i++) {
+                images[i].style.transform = 'translateX(0)';
+                images[i].style.opacity = 1;
+            }
+
+            const images2 = document.getElementsByClassName(
+                'showcase-text-inner-headline'
+            );
+
+            for (let i = 0; i < images2.length; i++) {
+                images2[i].style.transform = 'translateX(0)';
+                images2[i].style.opacity = 1;
+            }
+
+            const innerDescriptioncatchPhrase = document.querySelector(
+                '.showcase-text-inner-description'
+            );
+            innerDescriptioncatchPhrase.style.opacity = 1;
+        </script>
+
+        <section
+            class="content"
+            style="padding: 6rem 0; padding-bottom: 12rem"
+        >
+            <div class="container-mobile container-lg">
+                <div class="row text-image__text-wrapper">
+                    <div
+                        style=""
+                        class="col-xxl-6 col-lg-6 col-xs-12 text-image--text gx-lg-5"
+                    >
+                        <h2
+                            class="text-image--text-heading"
+                            style="font-size: 72px"
+                        >
+                            Tradition trifft Moderne
+                        </h2>
+                        <p class="text-image--text-paragraph">
+                            Wir sind ein kleiner landwirtschaftlicher
+                            Familienbetrieb, der traditionell, seit mehreren
+                            Generationen Kürbisse anbaut und verarbeitet.
+                            Inmitten des südoststeirischen Thermenlandes
+                            gelegen, auf einem Berg mit romatischen Ausblick auf
+                            das Umland, liegt unser Hof, in Österreich.
+                        </p>
+                    </div>
+                    <div
+                        class="col-xxl-1 col-lg-1 col-xs-12 text-image--image-wrapper align-items-end d-flex justify-content-center align-items-center order-lg-0 gx-lg-5"
+                        style="/*! border: 1px solid red; */"
+                    ></div>
+                    <div
+                        class="col-xxl-5 col-lg-6 col-xs-12 text-image--image-wrapper align-items-end d-flex justify-content-center align-items-center gy-5"
+                    >
+                        <img
+                            class="text-image--image-wrapper--image mb-3"
+                            width="100%"
+                            height="auto"
+                            src="./img/ueber-uns.jpeg"
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="wrapper-content-reverse">
+        <section class="images">
+            <div class="wrapper-gallery">
+                <img
+                    src="./img/kuerbis-7.jpeg"
+                    width="1080"
+                    height="1350"
+                    class="showcase-image gallery-image-1"
+                    alt="image.alt"
+                    style="
+                        max-width: 100%;
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                        margin-left: 1rem;
+                        margin-right: 1rem;
+                    "
+                />
+                <img
+                    src="./img/kuerbis-6.jpeg"
+                    width="1080"
+                    height="1350"
+                    class="showcase-image gallery-image-2"
+                    alt="image.alt"
+                    style="
+                        max-width: 100%;
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                        margin-right: 1rem;
+                    "
+                />
+                <img
+                    src="./img/kuerbis-3.jpeg"
+                    width="1080"
+                    height="1350"
+                    class="showcase-image gallery-image-3"
+                    alt="image.alt"
+                    style="
+                        max-width: 100%;
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                        margin-right: 1rem;
+                    "
+                />
+            </div>
+        </section>
+        <section
+            style="background-color: #fff; padding: 10rem 0"
+            class="content-2"
+        >
+            <div
+                style="display: flex; flex-flow: column; align-items: center"
+                class="container-mobile  container-lg"
+            >
+                <div
+                    style="
+                        display: flex;
+                        flex-flow: column wrap;
+                        max-width: 1200px;
+                    "
+                    class="text-wrapper"
+                >
+                    <h2
+                        style="
+                            margin: 0;
+                            font-family: Montserrat;
+                            font-size: 48px;
+                        "
+                    >
+                        Prämierter Steirischer Kernölbetrieb
+                    </h2>
+                    <p
+                        style="
+                            font-family: Montserrat;
+                            font-size: 20px;
+                            text-align: justify;
+                            line-height: 1.5;
+                        "
+                    >
+                        Köstliche und innovative produkte rund um den Kürbis!
+                        Vom Kürbiskernöl über das beliebte Kürbiskernpesto bis
+                        zum getrüffelten Kürbisschmalz. Lorem ipsum dolor, sit
+                        amet consectetur adipisicing elit. Optio ipsam,
+                        aspernatur maxime enim nam facilis sequi iure. Numquam
+                        fuga dolores amet exercitationem, tenetur nobis nam
+                        deserunt. Sint, sequi ipsa.
+
+                        <div style="display: flex;">
+                            <a
+                            class="btn mt-5"
+                            style="display: flex; flex-flow: column;"
+
+                            href="#"
+                            >
+                            <span>Zu unseren Produkten</span><span
+                                style=""
+                                class="animation-underline"
+                            ></span
+                        ></a>
+                        </div>
+                    </p>
+                </div>
+            </div>
+        </section>
+        </div>
+
+        <section class="footer">
+            <div class="container-mobile  container-lg d-flex align-items-center flex-column pb-3">
+                <img
+                    width="80"
+                    src="./img/logo.png"
+                />
+                <div style="font-family: Montserrat;">(c) Johann Koller </div>
+                <div><a class="link" href="#">Impressum</a></div>
+            </div>
+
+            <div class="container-mobile  container-lg d-flex justify-content-center">
+                <div style="display: flex;">
+                    <a style="margin-right: 1rem;" class="contact-link" href="#" onclick="javascript:window.location='mailto:' + 'john.doe@gmail.com' + '?subject=Kürbishof Koller Website&body=';return false;">
+                        <i style="color: black" class="fa fa-envelope fa-2x"></i>
+                    </a>
+                    <a style="margin-right: 1rem;" class="contact-link" rel="noopener noreferrer" href="https://at.linkedin.com/in/simon-ranftl-5b798624a" target="_blank">
+                        <i style="color: black" class="fab fa-facebook fa-2x"></i>
+                        
+                    </a>
+                    <a class="contact-link" rel="noopener noreferrer" href="https://www.instagram.com/simon_ranftl/" target="_blank">
+                        <i style="color: black" class="fab fa-instagram-square fa-2x"></i>
+                        
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            // <input type="checkbox" id="toggler">
+            
+            const toggler = document.getElementById('toggler');
+            toggler.addEventListener('change', (e) => {
+                if(e.target.checked) {
+                    document.body.style.overflow = 'hidden'
+                } else {
+                    document.body.style.overflow = 'auto'
+                }
+            })
+
+        </script>
+    </body>
+</html>
